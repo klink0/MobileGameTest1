@@ -10,6 +10,9 @@ public class MobileGameTest1 : ModuleRules
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 
+        PrivateDependencyModuleNames.AddRange(new string[] { "HTTP" });
+        PrivateIncludePathModuleNames.AddRange(new string[] { "HTTP" });
+
 		// Uncomment if you are using Slate UI
 		// PrivateDependencyModuleNames.AddRange(new string[] { "Slate", "SlateCore" });
 		
