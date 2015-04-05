@@ -27,7 +27,7 @@ public:
 	bool isTest;
 	
 	UFUNCTION(BlueprintCallable, Category = "HTTP")
-	void PostJSONHttp();
+	bool PostJSONHttp(FString login, float &Health, float &Mana);
 
 	void HttpCompleteCallback(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful);
 };
