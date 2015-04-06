@@ -24,10 +24,18 @@ public:
 	virtual void Tick( float DeltaSeconds ) override;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = TEST)
-	bool isTest;
+	bool isConnected;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = TEST)
+	float Health;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = TEST)
+	float Mana;
 	
 	UFUNCTION(BlueprintCallable, Category = "HTTP")
-	bool PostJSONHttp(FString login, float &Health, float &Mana);
+	bool PostJSONHttp(FString login);
 
 	void HttpCompleteCallback(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful);
+
+	void ParseJSON(FString message);
 };
