@@ -7,7 +7,7 @@ public class MobileGameTest1 : ModuleRules
 	public MobileGameTest1(TargetInfo Target)
 	{
 		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore" });
-        PublicDependencyModuleNames.AddRange(new string[] { "Json", "JsonUtilities" });
+        PublicDependencyModuleNames.AddRange(new string[] { "Json" });
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 
         PrivateDependencyModuleNames.AddRange(new string[] { "HTTP" });
