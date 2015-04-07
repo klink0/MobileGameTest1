@@ -39,7 +39,7 @@ bool ATest2::PostJSONHttp(FString login)
 
 	TSharedRef<IHttpRequest> HttpRequest = FHttpModule::Get().CreateRequest();
 	HttpRequest->SetHeader(TEXT("Content-Type"), TEXT("application/json; charset=utf-8"));
-	HttpRequest->SetURL(TEXT("http://192.168.1.30:1337"));
+	HttpRequest->SetURL(TEXT("http://95.85.36.144:1337"));
 	HttpRequest->SetVerb(TEXT("POST"));
 	HttpRequest->SetContentAsString(JsonStr);
 	HttpRequest->OnProcessRequestComplete().BindUObject(this, &ATest2::HttpCompleteCallback);
