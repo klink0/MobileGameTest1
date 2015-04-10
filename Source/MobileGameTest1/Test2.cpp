@@ -10,7 +10,7 @@ ATest2::ATest2()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
-	isConnected = false;
+	isConnected = 0;
 }
 
 // Called when the game starts or when spawned
@@ -76,10 +76,18 @@ void ATest2::ParseJSON(FString message)
 	if (FJsonSerializer::Deserialize(JsonReader, JsonParsed))
 	{
 		FString ResMessage = JsonParsed->GetStringField("message");
+		FString ResLogin = JsonParsed->GetStringField("login");
 		FString ResHealth = JsonParsed->GetStringField("health");
 		Health = FCString::Atof(*ResHealth);
 		Mana = FCString::Atof(*JsonParsed->GetStringField("mana"));
-		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::White, ResMessage + " " + ResHealth);
-		isConnected = true;
+		if (ResMessage == "OK"){
+			GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::White, "Logged in as " + ResLogin + " (" + ResHealth + ")");
+			isConnected = 1;
+		}
+		else {
+			GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::White, "There is no player named " + ResLogin);
+			isConnected = -1;
+		}
+		
 	}
 }

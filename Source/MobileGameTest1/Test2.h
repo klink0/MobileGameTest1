@@ -24,7 +24,7 @@ public:
 	virtual void Tick( float DeltaSeconds ) override;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = TEST)
-	bool isConnected;
+	INT32 isConnected;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = TEST)
 	float Health;
